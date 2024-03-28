@@ -1,0 +1,2 @@
+# Bloggy
+Simple Blog website 
