@@ -1,0 +1,17 @@
+#post_block {
+	margin-top: 100px;
+}
+.card {
+	margin: 20px;
+}
+.card__actions {
+	margin: 15px;
+}
+#contact_page {
+	position: absolute;
+	top: 75px;
+}
+#about_page {
+	position: absolute;
+	top: 75px;
+}

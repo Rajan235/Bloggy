@@ -1,0 +1,32 @@
+<%- include('includes/header.ejs') %>
+<%- include('includes/navbar.ejs') %>
+<main>
+                <% if (posts.length > 0) { %>
+                    <div class="grid" id="post_block">
+                        <% for (let post of posts) { %>
+                            <article class="card post-item">
+                                <header class="card__header">
+                                    <h1 class="post__title">
+                                        <%= post.title %>
+                                    </h1>
+                                </header>
+                                    <p class="product__body">
+                                        <%= post.description %>
+                                    </p>
+                                </div>
+                                <div class="card__actions">
+                                    <a href="/edit-post/<%= post.id %>" class="btn">Edit</a>
+                                    <form action="/delete-post" method="POST">
+                                        <input type="hidden" value="<%= post.id %>" name="postId">
+                                        <button class="btn" type="submit">Delete</button>
+                                    </form>
+
+                                </div>
+                            </article>
+                            <% } %>
+                    </div>
+                    <% } else { %>
+                        <h1>No Post Found!</h1>
+                        <% } %>
+            </main>
+            <%- include('includes/footer.ejs') %>

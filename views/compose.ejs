@@ -1,0 +1,73 @@
+<%- include('includes/header.ejs') %> <%- include('includes/navbar') %>
+<div id="composeForm">
+	<form action="/compose" method="POST" enctype="multipart/form-data">
+		<!--<div class="mb-3">
+			<label for="exampleInputEmail1" class="form-label">Title</label>
+			<input
+				type="text"
+				class="form-control"
+				id="exampleInputEmail1"
+				aria-describedby="emailHelp"
+				name="title"
+			/>
+		</div>
+		<div class="mb-3">
+			<label for="exampleInputPassword1" class="form-label">Description</label>
+			<input
+				type="text"
+				class="form-control"
+				id="exampleInputPassword1"
+				name="description"
+			/>
+		</div>
+		<button type="submit" class="btn btn-primary">Add Post</button>-->
+
+		<!--<div class="banner">
+			<input type="file" accept="image/*" id="banner-upload" hidden />
+			<label for="banner-upload" class="banner-upload-btn"
+				><img src="img/upload.png" alt="upload banner"
+			/></label>
+		</div>-->
+		<div class="banner" style="background-image: url('assets/image.png')">
+			<input
+				type="file"
+				accept="image/*"
+				id="banner-upload"
+				hidden
+				name="blog_image"
+			/>
+			<label for="banner-upload" class="banner-upload-btn"
+				><img src="/assets/upload.png" alt="upload banner"
+			/></label>
+		</div>
+
+		<div class="blog">
+			<textarea
+				type="text"
+				class="title"
+				placeholder="Blog title..."
+				name="title"
+			></textarea>
+			<textarea
+				type="text"
+				class="article"
+				placeholder="Start writing here..."
+				name="description"
+			></textarea>
+			<textarea
+				type="text"
+				class="article"
+				placeholder="Image Link"
+				name="image_URL"
+			></textarea>
+		</div>
+
+		<div class="blog-options">
+			<button class="btn dark publish-btn" type="submit">publish</button>
+			<input type="file" accept="image/*" id="image-upload" hidden />
+			<label for="image-upload" class="btn grey upload-btn">Upload Image</label>
+		</div>
+	</form>
+</div>
+
+<%- include('includes/footer.ejs') %>

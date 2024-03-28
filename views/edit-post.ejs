@@ -1,0 +1,49 @@
+<%- include('includes/header.ejs') %> <%- include('includes/navbar.ejs') %>
+<main>
+	<div id="composeForm">
+		<form action="/edit-post" method="POST" enctype="multipart/form-data">
+			<div
+				class="banner"
+				style="background-image: url('<%= post.image_URL %>')"
+			>
+				<input
+					type="file"
+					accept="image/*"
+					id="banner-upload"
+					hidden
+					name="blog_image"
+				/>
+				<label for="banner-upload" class="banner-upload-btn"
+					><img src="/assets/upload.png" alt="upload banner"
+				/></label>
+			</div>
+
+			<div class="blog">
+				<textarea type="text" class="title" name="title">
+<%= post.title %></textarea
+				>
+				<textarea type="text" class="article" name="description">
+<%= post.description %></textarea
+				>
+				<textarea
+					type="text"
+					class="article"
+					placeholder="Image Link"
+					name="image_URL"
+				>
+<%= post.image_URL %></textarea
+				>
+			</div>
+
+			<div class="blog-options">
+				<button class="btn dark publish-btn" type="submit">Update</button>
+				<input type="file" accept="image/*" id="image-upload" hidden />
+				<label for="image-upload" class="btn grey upload-btn"
+					>Upload Image</label
+				>
+				<input type="hidden" value="<%= post.id %>" name="postId" />
+			</div>
+		</form>
+	</div>
+</main>
+<%- include('includes/footer.ejs') %>
